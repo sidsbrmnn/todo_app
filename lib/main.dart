@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo_app/pages/events_page.dart';
 import 'package:todo_app/pages/tasks_page.dart';
 
 void main() => runApp(MyApp());
@@ -89,7 +90,7 @@ class _MyHomePageState extends State<MyHomePage> {
           child: _renderButtons(),
         ),
         Expanded(
-          child: TasksPage(),
+          child: EventsPage(),
         )
       ],
     );
