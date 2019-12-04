@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo_app/pages/tasks_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -87,78 +88,10 @@ class _MyHomePageState extends State<MyHomePage> {
           padding: const EdgeInsets.all(24.0),
           child: _renderButtons(),
         ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 8.0),
-          child: Column(
-            children: <Widget>[
-              _buildUncompletedTask('Call Tom about appointment'),
-              _buildUncompletedTask('Fix on boarding experience'),
-              _buildUncompletedTask('Edit API documentation'),
-              _buildUncompletedTask('Set up user focus group')
-            ],
-          ),
-        ),
-        Divider(
-          thickness: 1,
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 8.0),
-          child: Column(
-            children: <Widget>[
-              _buildCompletedTask('Have coffee with Sam'),
-              _buildCompletedTask('Meet with Sales')
-            ],
-          ),
+        Expanded(
+          child: TasksPage(),
         )
       ],
-    );
-  }
-
-  Widget _buildUncompletedTask(String text) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 12.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          Icon(
-            Icons.radio_button_unchecked,
-            color: Theme.of(context).accentColor,
-            size: 24.0,
-          ),
-          SizedBox(
-            width: 16.0,
-          ),
-          Text(
-            text,
-            style: TextStyle(fontSize: 16.0),
-          )
-        ],
-      ),
-    );
-  }
-
-  Widget _buildCompletedTask(String text) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 12.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          Icon(
-            Icons.radio_button_checked,
-            color: Theme.of(context).accentColor,
-            size: 24.0,
-          ),
-          SizedBox(
-            width: 16.0,
-          ),
-          Text(
-            text,
-            style: TextStyle(fontSize: 16.0),
-          )
-        ],
-      ),
     );
   }
 
