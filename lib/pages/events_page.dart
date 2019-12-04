@@ -112,16 +112,22 @@ class _EventsPageState extends State<EventsPage> {
                         Text(
                           _eventList[index].task,
                           style: TextStyle(
+                            fontSize: 16.0,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
                         SizedBox(
-                          height: 8,
+                          height: 4,
                         ),
                         Container(
                           foregroundDecoration:
                               BoxDecoration(color: Color(0x60FDFDFD)),
-                          child: Text(_eventList[index].category),
+                          child: Text(
+                            _eventList[index].category,
+                            style: TextStyle(
+                              fontSize: 14.0,
+                            ),
+                          ),
                         )
                       ],
                     ),
