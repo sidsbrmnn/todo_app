@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:todo_app/pages/events_page.dart';
 import 'package:todo_app/pages/tasks_page.dart';
+import 'package:todo_app/widgets/custom_button.dart';
 
 void main() => runApp(MyApp());
 
@@ -100,31 +101,23 @@ class _MyHomePageState extends State<MyHomePage> {
     return Row(
       children: <Widget>[
         Expanded(
-          child: MaterialButton(
+          child: CustomButton(
+            text: 'Tasks',
             onPressed: () {},
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8),
-            ),
-            padding: const EdgeInsets.symmetric(vertical: 16.0),
             color: Theme.of(context).accentColor,
             textColor: Colors.white,
-            child: Text('Tasks'),
           ),
         ),
         SizedBox(
           width: 32,
         ),
         Expanded(
-          child: MaterialButton(
+          child: CustomButton(
+            text: 'Events',
             onPressed: () {},
-            shape: RoundedRectangleBorder(
-              side: BorderSide(color: Theme.of(context).accentColor),
-              borderRadius: BorderRadius.circular(8),
-            ),
-            padding: const EdgeInsets.symmetric(vertical: 16.0),
             color: Colors.white,
             textColor: Theme.of(context).accentColor,
-            child: Text('Events'),
+            borderColor: Theme.of(context).accentColor,
           ),
         )
       ],
