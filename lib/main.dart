@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:todo_app/pages/events_page.dart';
-import 'package:todo_app/pages/tasks_page.dart';
-import 'package:todo_app/widgets/custom_button.dart';
+import 'package:intl/intl.dart';
 
 import 'models.dart';
 import 'pages/add_event_page.dart';
@@ -57,7 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
           Positioned(
             right: 0,
             child: Text(
-              '4',
+              new DateFormat.d().format(new DateTime.now()),
               style: TextStyle(
                 fontSize: 200,
                 fontWeight: FontWeight.bold,
@@ -114,7 +112,7 @@ class _MyHomePageState extends State<MyHomePage> {
         Padding(
           padding: const EdgeInsets.all(24.0),
           child: Text(
-            'Wednesday',
+            new DateFormat.EEEE().format(new DateTime.now()),
             style: TextStyle(
               fontSize: 48.0,
               fontWeight: FontWeight.bold,
