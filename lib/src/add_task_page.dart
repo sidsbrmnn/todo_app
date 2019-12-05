@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/custom_button.dart';
-import '../widgets/custom_textfield.dart';
+import 'widgets/custom_button.dart';
+import 'widgets/custom_textfield.dart';
 
 class AddTaskPage extends StatefulWidget {
   @override

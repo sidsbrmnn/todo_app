@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-import '../widgets/custom_button.dart';
-import '../widgets/custom_textfield.dart';
+import 'widgets/custom_button.dart';
+import 'widgets/custom_textfield.dart';
 
 class AddEventPage extends StatefulWidget {
   @override
