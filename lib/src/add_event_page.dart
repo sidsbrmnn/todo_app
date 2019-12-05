@@ -120,14 +120,14 @@ class _AddEventPageState extends State<AddEventPage> {
       padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 16.0),
       onPressed: onPressed,
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          Icon(icon, color: Theme.of(context).accentColor, size: 30),
+          Icon(icon, color: Theme.of(context).accentColor, size: 28),
           SizedBox(
             width: 12,
           ),
           Text(
             value,
-            style: TextStyle(fontSize: 16),
           )
         ],
       ),
