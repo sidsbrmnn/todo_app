@@ -10,3 +10,19 @@ class Page {
 
   Page({this.name, this.pageType, this.component, this.newItemPage});
 }
+
+class Event {
+  final String time;
+  final String task;
+  final String category;
+  final bool isComplete;
+
+  Event({this.category, this.time, this.task, this.isComplete});
+}
+
+class Task {
+  final String task;
+  final bool isComplete;
+
+  Task({this.task, this.isComplete});
+}

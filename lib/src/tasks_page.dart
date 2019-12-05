@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Task {
-  final String task;
-  final bool isComplete;
-
-  Task({this.task, this.isComplete});
-}
+import 'models.dart';
 
 final List<Task> _taskList = [
   Task(task: 'Call Tom about appointment', isComplete: false),

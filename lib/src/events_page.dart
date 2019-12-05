@@ -1,13 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Event {
-  final String time;
-  final String task;
-  final String category;
-  final bool isComplete;
-
-  Event({this.category, this.time, this.task, this.isComplete});
-}
+import 'models.dart';
 
 final List<Event> _eventList = [
   Event(
