@@ -6,6 +6,9 @@ import 'package:todo_app/widgets/custom_button.dart';
 import 'models.dart';
 import 'pages/add_event_page.dart';
 import 'pages/add_task_page.dart';
+import 'pages/events_page.dart';
+import 'pages/tasks_page.dart';
+import 'widgets/custom_button.dart';
 
 void main() => runApp(MyApp());
 

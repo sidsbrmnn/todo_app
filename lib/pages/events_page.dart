@@ -56,6 +56,7 @@ class _EventsPageState extends State<EventsPage> {
             children: <Widget>[
               Container(
                 decoration: IconDecoration(
+                  context: context,
                   iconSize: iconSize,
                   lineWidth: 1,
                   isFirst: index == 0 ?? true,
@@ -147,44 +148,44 @@ class IconDecoration extends Decoration {
   final double lineWidth;
   final bool isFirst;
   final bool isLast;
+  final BuildContext context;
 
   IconDecoration({
-    @required double iconSize,
-    @required double lineWidth,
-    @required bool isFirst,
-    @required bool isLast,
-  })  : this.iconSize = iconSize,
-        this.lineWidth = lineWidth,
-        this.isFirst = isFirst,
-        this.isLast = isLast;
+    @required this.iconSize,
+    @required this.lineWidth,
+    @required this.isFirst,
+    @required this.isLast,
+    @required this.context,
+  });
 
   @override
   BoxPainter createBoxPainter([onChanged]) {
     return IconLine(
-        iconSize: iconSize,
-        lineWidth: lineWidth,
-        isFirst: isFirst,
-        isLast: isLast);
+      iconSize: iconSize,
+      lineWidth: lineWidth,
+      isFirst: isFirst,
+      isLast: isLast,
+      context: context,
+    );
   }
 }
 
 class IconLine extends BoxPainter {
   final double iconSize;
+  final double lineWidth;
   final bool isFirst;
   final bool isLast;
-
+  final BuildContext context;
   final Paint paintLine;
 
   IconLine({
-    @required double iconSize,
-    @required double lineWidth,
-    @required bool isFirst,
-    @required bool isLast,
-  })  : this.iconSize = iconSize,
-        this.isFirst = isFirst,
-        this.isLast = isLast,
-        paintLine = Paint()
-          ..color = Colors.red
+    @required this.iconSize,
+    @required this.lineWidth,
+    @required this.isFirst,
+    @required this.isLast,
+    @required this.context,
+  }) : paintLine = Paint()
+          ..color = Theme.of(context).accentColor
           ..strokeCap = StrokeCap.round
           ..strokeWidth = lineWidth
           ..style = PaintingStyle.stroke;
