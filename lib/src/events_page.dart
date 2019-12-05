@@ -47,11 +47,11 @@ class _EventsPageState extends State<EventsPage> {
     double iconSize = 24;
 
     return ListView.builder(
-      padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 8.0),
+      padding: EdgeInsets.symmetric(horizontal: 24.0, vertical: 8.0),
       itemCount: _eventList.length,
       itemBuilder: (BuildContext context, int index) {
         return Padding(
-          padding: const EdgeInsets.symmetric(vertical: 12.0),
+          padding: EdgeInsets.symmetric(vertical: 12.0),
           child: Row(
             children: <Widget>[
               Container(
@@ -87,15 +87,15 @@ class _EventsPageState extends State<EventsPage> {
               Container(
                 foregroundDecoration: BoxDecoration(color: Color(0x60FDFDFD)),
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                  padding: EdgeInsets.symmetric(horizontal: 24.0),
                   child: Text(_eventList[index].time),
                 ),
               ),
               Expanded(
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 12.0),
+                  padding: EdgeInsets.symmetric(vertical: 12.0),
                   child: Container(
-                    padding: const EdgeInsets.all(16.0),
+                    padding: EdgeInsets.all(16.0),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.all(Radius.circular(8)),

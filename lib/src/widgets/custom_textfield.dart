@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
-  const CustomTextField({
+  CustomTextField({
     @required this.labelText,
     this.autofocus = false,
     this.textCapitalization = TextCapitalization.none,

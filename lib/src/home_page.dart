@@ -92,7 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
           height: 72,
         ),
         Padding(
-          padding: const EdgeInsets.all(24.0),
+          padding: EdgeInsets.all(24.0),
           child: Text(
             DateFormat.EEEE().format(DateTime.now()),
             style: TextStyle(
@@ -102,7 +102,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(24.0),
+          padding: EdgeInsets.all(24.0),
           child: Row(
             children: <Widget>[
               Expanded(

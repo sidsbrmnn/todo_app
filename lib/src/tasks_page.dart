@@ -25,7 +25,7 @@ class _TasksPageState extends State<TasksPage> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 8.0),
+      padding: EdgeInsets.symmetric(horizontal: 24.0, vertical: 8.0),
       itemCount: _taskList.length,
       itemBuilder: (BuildContext context, int index) {
         return _taskList[index].isComplete
@@ -39,7 +39,7 @@ class _TasksPageState extends State<TasksPage> {
     return Container(
       foregroundDecoration: BoxDecoration(color: Color(0x60FDFDFD)),
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 12.0),
+        padding: EdgeInsets.symmetric(vertical: 12.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -64,7 +64,7 @@ class _TasksPageState extends State<TasksPage> {
 
   Widget _taskIncomplete(String text) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 12.0),
+      padding: EdgeInsets.symmetric(vertical: 12.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,

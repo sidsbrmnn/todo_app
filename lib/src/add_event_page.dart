@@ -43,7 +43,7 @@ class _AddEventPageState extends State<AddEventPage> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 24.0),
+      padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 24.0),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[

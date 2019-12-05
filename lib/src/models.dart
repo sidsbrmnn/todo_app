@@ -8,5 +8,5 @@ class Page {
   final Widget component;
   final Widget newItemPage;
 
-  const Page({this.name, this.pageType, this.component, this.newItemPage});
+  Page({this.name, this.pageType, this.component, this.newItemPage});
 }
