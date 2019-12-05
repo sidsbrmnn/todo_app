@@ -36,6 +36,10 @@ class _MyHomePageState extends State<MyHomePage> {
       body: SafeArea(
         child: Stack(
           children: <Widget>[
+            Container(
+              height: 6,
+              color: Theme.of(context).accentColor,
+            ),
             Positioned(
               top: -48,
               right: 0,
