@@ -3,6 +3,10 @@ import 'package:todo_app/pages/events_page.dart';
 import 'package:todo_app/pages/tasks_page.dart';
 import 'package:todo_app/widgets/custom_button.dart';
 
+import 'models.dart';
+import 'pages/add_event_page.dart';
+import 'pages/add_task_page.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -26,6 +30,22 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  Map<PageType, Page> _pages = {
+    PageType.Tasks: new Page(
+      name: 'Tasks',
+      pageType: PageType.Tasks,
+      component: TasksPage(),
+      newItemPage: AddTaskPage(),
+    ),
+    PageType.Events: new Page(
+      name: 'Events',
+      pageType: PageType.Events,
+      component: EventsPage(),
+      newItemPage: AddEventPage(),
+    )
+  };
+  PageType _selectedPage = PageType.Tasks;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,7 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8.0),
                 ),
-                child: AddTaskPage(),
+                child: _pages[_selectedPage].newItemPage,
               );
             },
           );
@@ -100,39 +120,41 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         Padding(
           padding: const EdgeInsets.all(24.0),
-          child: _renderButtons(),
+          child: Row(
+            children: <Widget>[
+              Expanded(
+                child: _renderButton(_pages[PageType.Tasks]),
+              ),
+              SizedBox(
+                width: 32,
+              ),
+              Expanded(
+                child: _renderButton(_pages[PageType.Events]),
+              )
+            ],
+          ),
         ),
         Expanded(
-          child: EventsPage(),
+          child: _pages[_selectedPage].component,
         )
       ],
     );
   }
 
-  Widget _renderButtons() {
-    return Row(
-      children: <Widget>[
-        Expanded(
-          child: CustomButton(
-            text: 'Tasks',
-            onPressed: () {},
-            color: Theme.of(context).accentColor,
-            textColor: Colors.white,
-          ),
-        ),
-        SizedBox(
-          width: 32,
-        ),
-        Expanded(
-          child: CustomButton(
-            text: 'Events',
-            onPressed: () {},
-            color: Colors.white,
-            textColor: Theme.of(context).accentColor,
-            borderColor: Theme.of(context).accentColor,
-          ),
-        )
-      ],
+  Widget _renderButton(Page page) {
+    bool isSelected = page.pageType == _selectedPage;
+
+    return CustomButton(
+      text: page.name,
+      onPressed: () {
+        setState(() {
+          _selectedPage = page.pageType;
+        });
+      },
+      color: isSelected ? Theme.of(context).accentColor : Colors.white,
+      textColor: isSelected ? Colors.white : Theme.of(context).accentColor,
+      borderColor:
+          isSelected ? Colors.transparent : Theme.of(context).accentColor,
     );
   }
 }
