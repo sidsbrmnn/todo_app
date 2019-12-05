@@ -33,20 +33,22 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: <Widget>[
-          Positioned(
-            right: 0,
-            child: Text(
-              DateFormat.d().format(DateTime.now()),
-              style: TextStyle(
-                fontSize: 200,
-                color: Color(0x10000000),
+      body: SafeArea(
+        child: Stack(
+          children: <Widget>[
+            Positioned(
+              right: 0,
+              child: Text(
+                DateFormat.d().format(DateTime.now()),
+                style: TextStyle(
+                  fontSize: 200,
+                  color: Color(0x10000000),
+                ),
               ),
             ),
-          ),
-          _mainContent()
-        ],
+            _mainContent()
+          ],
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
@@ -88,9 +90,6 @@ class _MyHomePageState extends State<MyHomePage> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        SizedBox(
-          height: 72,
-        ),
         Padding(
           padding: EdgeInsets.all(24.0),
           child: Text(
