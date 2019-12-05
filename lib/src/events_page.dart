@@ -10,25 +10,25 @@ class Event {
 }
 
 final List<Event> _eventList = [
-  new Event(
+  Event(
     time: '08:00',
     task: 'Coffee with Sam',
     category: 'Personal',
     isComplete: true,
   ),
-  new Event(
+  Event(
     time: '10:00',
     task: 'Meet with Sales',
     category: 'Work',
     isComplete: true,
   ),
-  new Event(
+  Event(
     time: '12:00',
     task: 'Edit API documentation about SSO',
     category: 'Work',
     isComplete: false,
   ),
-  new Event(
+  Event(
     time: '18:00',
     task: 'Go to Gym',
     category: 'Personal',
