@@ -8,12 +8,12 @@ class Task {
 }
 
 final List<Task> _taskList = [
-  new Task(task: 'Call Tom about appointment', isComplete: false),
-  new Task(task: 'Fix on boarding experience', isComplete: false),
-  new Task(task: 'Edit API documentation', isComplete: false),
-  new Task(task: 'Set up user focus group', isComplete: false),
-  new Task(task: 'Have coffee with Sam', isComplete: true),
-  new Task(task: 'Meet with Sales', isComplete: true)
+  Task(task: 'Call Tom about appointment', isComplete: false),
+  Task(task: 'Fix on boarding experience', isComplete: false),
+  Task(task: 'Edit API documentation', isComplete: false),
+  Task(task: 'Set up user focus group', isComplete: false),
+  Task(task: 'Have coffee with Sam', isComplete: true),
+  Task(task: 'Meet with Sales', isComplete: true)
 ];
 
 class TasksPage extends StatefulWidget {

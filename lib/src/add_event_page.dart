@@ -16,25 +16,25 @@ class _AddEventPageState extends State<AddEventPage> {
   Future _pickDate() async {
     DateTime datepick = await showDatePicker(
       context: context,
-      initialDate: new DateTime.now(),
-      firstDate: new DateTime.now().add(Duration(days: -365)),
-      lastDate: new DateTime.now().add(Duration(days: 365)),
+      initialDate: DateTime.now(),
+      firstDate: DateTime.now().add(Duration(days: -365)),
+      lastDate: DateTime.now().add(Duration(days: 365)),
     );
     if (datepick != null)
       setState(() {
-        _selectedDate = new DateFormat.yMd().format(datepick);
+        _selectedDate = DateFormat.yMd().format(datepick);
       });
   }
 
   Future _pickTime() async {
     TimeOfDay timepick = await showTimePicker(
       context: context,
-      initialTime: new TimeOfDay.now(),
+      initialTime: TimeOfDay.now(),
     );
     if (timepick != null) {
-      final now = new DateTime.now();
+      final now = DateTime.now();
       setState(() {
-        _selectedTime = new DateFormat.Hm().format(new DateTime(
+        _selectedTime = DateFormat.Hm().format(DateTime(
             now.year, now.month, now.day, timepick.hour, timepick.minute));
       });
     }

@@ -15,13 +15,13 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   Map<PageType, Page> _pages = {
-    PageType.Tasks: new Page(
+    PageType.Tasks: Page(
       name: 'Tasks',
       pageType: PageType.Tasks,
       component: TasksPage(),
       newItemPage: AddTaskPage(),
     ),
-    PageType.Events: new Page(
+    PageType.Events: Page(
       name: 'Events',
       pageType: PageType.Events,
       component: EventsPage(),
@@ -38,7 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
           Positioned(
             right: 0,
             child: Text(
-              new DateFormat.d().format(new DateTime.now()),
+              DateFormat.d().format(DateTime.now()),
               style: TextStyle(
                 fontSize: 200,
                 color: Color(0x10000000),
@@ -94,7 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
         Padding(
           padding: const EdgeInsets.all(24.0),
           child: Text(
-            new DateFormat.EEEE().format(new DateTime.now()),
+            DateFormat.EEEE().format(DateTime.now()),
             style: TextStyle(
               fontSize: 48.0,
               fontWeight: FontWeight.bold,
