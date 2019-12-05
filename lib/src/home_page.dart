@@ -37,6 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Stack(
           children: <Widget>[
             Positioned(
+              top: -48,
               right: 0,
               child: Text(
                 DateFormat.d().format(DateTime.now()),
@@ -91,7 +92,8 @@ class _MyHomePageState extends State<MyHomePage> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Padding(
-          padding: EdgeInsets.all(24.0),
+          padding:
+              EdgeInsets.only(left: 24.0, top: 48.0, bottom: 16.0, right: 8.0),
           child: Text(
             DateFormat.EEEE().format(DateTime.now()),
             style: TextStyle(
