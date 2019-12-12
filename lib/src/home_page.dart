@@ -79,11 +79,17 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             IconButton(
               onPressed: () {},
-              icon: Icon(Icons.settings),
+              icon: Icon(
+                Icons.settings,
+                color: Theme.of(context).disabledColor,
+              ),
             ),
             IconButton(
               onPressed: () {},
-              icon: Icon(Icons.more_vert),
+              icon: Icon(
+                Icons.more_vert,
+                color: Theme.of(context).disabledColor,
+              ),
             ),
           ],
         ),
