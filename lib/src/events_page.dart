@@ -81,7 +81,12 @@ class _EventsPageState extends State<EventsPage> {
                 foregroundDecoration: BoxDecoration(color: Color(0x60FDFDFD)),
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 24.0),
-                  child: Text(_eventList[index].time),
+                  child: Text(
+                    _eventList[index].time,
+                    style: TextStyle(
+                      fontSize: 12.0,
+                    ),
+                  ),
                 ),
               ),
               Expanded(
@@ -119,7 +124,7 @@ class _EventsPageState extends State<EventsPage> {
                           child: Text(
                             _eventList[index].category,
                             style: TextStyle(
-                              fontSize: 14.0,
+                              fontSize: 12.0,
                             ),
                           ),
                         )
