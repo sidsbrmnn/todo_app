@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-
 import 'add_event_page.dart';
 import 'add_task_page.dart';
 import 'events_page.dart';
@@ -14,14 +13,14 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  Map<PageType, Page> _pages = {
-    PageType.Tasks: Page(
+  Map<PageType, AppPage> _pages = {
+    PageType.Tasks: AppPage(
       name: 'Tasks',
       pageType: PageType.Tasks,
       component: TasksPage(),
       newItemPage: AddTaskPage(),
     ),
-    PageType.Events: Page(
+    PageType.Events: AppPage(
       name: 'Events',
       pageType: PageType.Events,
       component: EventsPage(),
@@ -135,7 +134,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  Widget _renderButton(Page page) {
+  Widget _renderButton(AppPage page) {
     bool isSelected = page.pageType == _selectedPage;
 
     return CustomButton(
