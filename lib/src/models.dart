@@ -20,9 +20,3 @@ class Event {
   Event({this.category, this.time, this.task, this.isComplete});
 }
 
-class Task {
-  final String task;
-  final bool isComplete;
-
-  Task({this.task, this.isComplete});
-}
