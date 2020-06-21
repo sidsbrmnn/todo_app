@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import '../../task_and_event_data.dart';
 import '../Widgets/task_tile.dart';
 import 'package:provider/provider.dart';
-import '../models/tasks_data.dart';
+
 
 class TasksList extends StatelessWidget {
 
@@ -9,7 +10,7 @@ class TasksList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 24.0, vertical: 8.0),
-      child: Consumer<TasksData>(
+      child: Consumer<TaskAndEventData>(
         builder: (context, taskData, child){
           return ListView.builder(
             itemBuilder: (context, index) {

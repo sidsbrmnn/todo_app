@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
+import '../../task_and_event_data.dart';
+import '../../widgets/custom_button.dart';
+import 'package:provider/provider.dart';
+import '../../widgets/custom_textfield.dart';
 import 'package:intl/intl.dart';
 
-import 'widgets/custom_button.dart';
-import 'widgets/custom_textfield.dart';
 
-class AddEventPage extends StatefulWidget {
+class AddEventScreen extends StatefulWidget {
   @override
-  _AddEventPageState createState() => _AddEventPageState();
+  _AddEventScreenState createState() => _AddEventScreenState();
 }
 
-class _AddEventPageState extends State<AddEventPage> {
+class _AddEventScreenState extends State<AddEventScreen> {
   String _selectedDate = 'Pick date';
   String _selectedTime = 'Pick time';
+  String newEventTitle = '';
+  String category = '';
 
   Future _pickDate() async {
     DateTime datepick = await showDatePicker(
@@ -36,6 +40,8 @@ class _AddEventPageState extends State<AddEventPage> {
       setState(() {
         _selectedTime = DateFormat.Hm().format(DateTime(
             now.year, now.month, now.day, timepick.hour, timepick.minute));
+        print(_selectedDate);
+        print(_selectedTime);
       });
     }
   }
@@ -60,13 +66,19 @@ class _AddEventPageState extends State<AddEventPage> {
             labelText: 'Event',
             autofocus: true,
             textCapitalization: TextCapitalization.sentences,
+            onChanged: (newText) {
+              newEventTitle = newText;
+            },
           ),
           SizedBox(
             height: 16.0,
           ),
           CustomTextField(
-            labelText: 'Calendar',
+            labelText: 'Category',
             textCapitalization: TextCapitalization.sentences,
+            onChanged: (newText) {
+              category = newText;
+            },
           ),
           SizedBox(
             height: 16.0,
@@ -76,7 +88,7 @@ class _AddEventPageState extends State<AddEventPage> {
             children: <Widget>[
               Expanded(
                 child:
-                    _dateTimePicker(Icons.date_range, _pickDate, _selectedDate),
+                _dateTimePicker(Icons.date_range, _pickDate, _selectedDate),
               ),
               SizedBox(
                 width: 8,
@@ -100,7 +112,11 @@ class _AddEventPageState extends State<AddEventPage> {
                 text: 'Cancel',
               ),
               CustomButton(
-                onPressed: () {},
+                onPressed: () {
+                  Provider.of<TaskAndEventData>(context, listen: false).addEvent(newEventTitle, _selectedTime, category);
+                  TaskAndEventData.sortEvents();
+                  Navigator.pop(context);
+                },
                 text: 'Add',
                 color: Theme.of(context).accentColor,
                 textColor: Colors.white,
@@ -134,3 +150,4 @@ class _AddEventPageState extends State<AddEventPage> {
     );
   }
 }
+

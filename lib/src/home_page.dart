@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:todo_app/src/tasks/Widgets/tasks_list.dart';
-import 'package:todo_app/src/tasks/screens/add_task_screen.dart';
-import 'add_event_page.dart';
-import 'events_page.dart';
+import 'events/screens/add_events_screen.dart';
+import 'events/widgets/events_list.dart';
+import 'tasks/Widgets/tasks_list.dart';
+import 'tasks/screens/add_task_screen.dart';
 import 'models.dart';
 import 'widgets/custom_button.dart';
 
@@ -25,8 +25,8 @@ class _MyHomePageState extends State<MyHomePage> {
     PageType.Events: AppPage(
       name: 'Events',
       pageType: PageType.Events,
-      component: EventsPage(),
-      newItemPage: AddEventPage(),
+      component: EventList(),
+      newItemPage: AddEventScreen(),
     )
   };
   PageType _selectedPage = PageType.Tasks;
