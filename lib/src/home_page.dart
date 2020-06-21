@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:todo_app/src/tasks/Widgets/tasks_list.dart';
+import 'package:todo_app/src/tasks/screens/add_task_screen.dart';
 import 'add_event_page.dart';
-import 'add_task_page.dart';
 import 'events_page.dart';
 import 'models.dart';
-import 'tasks_page.dart';
 import 'widgets/custom_button.dart';
+
+
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -17,8 +19,8 @@ class _MyHomePageState extends State<MyHomePage> {
     PageType.Tasks: AppPage(
       name: 'Tasks',
       pageType: PageType.Tasks,
-      component: TasksPage(),
-      newItemPage: AddTaskPage(),
+      component: TasksList(),
+      newItemPage: AddTaskScreen(),
     ),
     PageType.Events: AppPage(
       name: 'Events',
