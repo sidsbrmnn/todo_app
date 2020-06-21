@@ -26,11 +26,6 @@ class TaskTile extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-//              Checkbox(
-//                value: isChecked,
-//                activeColor: Theme.of(context).accentColor,
-//                onChanged: checkboxCallback,
-//              ),
               Icon(
                 isChecked ?  Icons.radio_button_checked : Icons.radio_button_unchecked,
                 color: Theme.of(context).accentColor,
@@ -49,20 +44,6 @@ class TaskTile extends StatelessWidget {
       ),
     );
 
-//    return ListTile(
-//      onLongPress: longPressCallback,
-//      title: Text(
-//        taskTitle,
-//        style: TextStyle(
-//          color: Colors.black,
-//          decoration: isChecked ? TextDecoration.lineThrough: null,
-//        ),
-//      ),
-//      leading: Checkbox(
-//        value: isChecked,
-//        activeColor: Theme.of(context).accentColor,
-//        onChanged: checkboxCallback,
-//      ),
-//    );
+
   }
 }

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:todo_app/src/tasks/models/tasks_data.dart';
+
+import './src/task_and_event_data.dart';
+
 
 import 'src/home_page.dart';
 
@@ -20,7 +22,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (context) => TasksData(),
+      create: (context) => TaskAndEventData(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Todo App',

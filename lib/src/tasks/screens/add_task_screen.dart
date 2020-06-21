@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../../widgets/custom_button.dart';
 import 'package:provider/provider.dart';
 import '../../widgets/custom_textfield.dart';
-import '../models/tasks_data.dart';
+import '../../task_and_event_data.dart';
 
 class AddTaskScreen extends StatelessWidget {
   @override
@@ -45,7 +45,7 @@ class AddTaskScreen extends StatelessWidget {
               ),
               CustomButton(
                 onPressed: () {
-                  Provider.of<TasksData>(context, listen: false)
+                  Provider.of<TaskAndEventData>(context, listen: false)
                       .addTask(newTaskTitle);
                   Navigator.pop(context);
                 },
