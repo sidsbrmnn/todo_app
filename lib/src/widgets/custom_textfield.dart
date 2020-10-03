@@ -5,7 +5,7 @@ class CustomTextField extends StatelessWidget {
     @required this.labelText,
     this.autofocus = false,
     this.textCapitalization = TextCapitalization.none,
-    this.onChanged = null,
+    this.onChanged,
     this.cursorColor,
   });
 
@@ -14,7 +14,6 @@ class CustomTextField extends StatelessWidget {
   final TextCapitalization textCapitalization;
   final Function onChanged;
   final Color cursorColor;
-
 
   @override
   Widget build(BuildContext context) {

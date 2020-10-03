@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class EventTile extends StatelessWidget {
   final bool isComplete;
   final String taskTitle;
@@ -38,7 +39,7 @@ class EventTile extends StatelessWidget {
                 iconSize: iconSize,
                 lineWidth: 1,
                 isFirst: isFirst, //index == 0 ?? true,
-                isLast:  isLast, //index == eventData.eventCount - 1 ?? true,
+                isLast: isLast, //index == eventData.eventCount - 1 ?? true,
               ),
               child: Container(
                 decoration: isComplete
@@ -122,7 +123,6 @@ class EventTile extends StatelessWidget {
         ),
       ),
     );
-    ;
   }
 }
 

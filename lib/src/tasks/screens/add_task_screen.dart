@@ -17,6 +17,7 @@ class AddTaskScreen extends StatelessWidget {
           Text(
             'Add new task',
             textAlign: TextAlign.center,
+            // ignore: deprecated_member_use
             style: Theme.of(context).textTheme.title,
           ),
           SizedBox(

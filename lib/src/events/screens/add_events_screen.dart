@@ -55,6 +55,7 @@ class _AddEventScreenState extends State<AddEventScreen> {
           Center(
             child: Text(
               'Add new event',
+              // ignore: deprecated_member_use
               style: Theme.of(context).textTheme.title,
             ),
           ),
