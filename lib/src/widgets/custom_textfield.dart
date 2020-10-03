@@ -5,15 +5,19 @@ class CustomTextField extends StatelessWidget {
     @required this.labelText,
     this.autofocus = false,
     this.textCapitalization = TextCapitalization.none,
+    this.onChanged,
+    this.cursorColor,
   });
 
   final String labelText;
   final bool autofocus;
   final TextCapitalization textCapitalization;
+  final Function onChanged;
+  final Color cursorColor;
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
       decoration: InputDecoration(
         labelText: labelText,
         border: OutlineInputBorder(
@@ -23,6 +27,8 @@ class CustomTextField extends StatelessWidget {
       autofocus: autofocus,
       autocorrect: true,
       textCapitalization: textCapitalization,
+      onChanged: onChanged,
+      cursorColor: cursorColor,
     );
   }
 }

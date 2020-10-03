@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'add_event_page.dart';
-import 'add_task_page.dart';
-import 'events_page.dart';
+import 'events/screens/add_events_screen.dart';
+import 'events/widgets/events_list.dart';
+import 'tasks/Widgets/tasks_list.dart';
+import 'tasks/screens/add_task_screen.dart';
 import 'models.dart';
-import 'tasks_page.dart';
 import 'widgets/custom_button.dart';
+
+
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -17,14 +19,14 @@ class _MyHomePageState extends State<MyHomePage> {
     PageType.Tasks: AppPage(
       name: 'Tasks',
       pageType: PageType.Tasks,
-      component: TasksPage(),
-      newItemPage: AddTaskPage(),
+      component: TasksList(),
+      newItemPage: AddTaskScreen(),
     ),
     PageType.Events: AppPage(
       name: 'Events',
       pageType: PageType.Events,
-      component: EventsPage(),
-      newItemPage: AddEventPage(),
+      component: EventList(),
+      newItemPage: AddEventScreen(),
     )
   };
   PageType _selectedPage = PageType.Tasks;

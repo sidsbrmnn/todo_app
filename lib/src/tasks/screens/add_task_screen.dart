@@ -1,34 +1,36 @@
 import 'package:flutter/material.dart';
+import 'package:todo_app/src/tasks/models/task_data.dart';
+import '../../widgets/custom_button.dart';
+import 'package:provider/provider.dart';
+import '../../widgets/custom_textfield.dart';
 
-import 'widgets/custom_button.dart';
-import 'widgets/custom_textfield.dart';
-
-class AddTaskPage extends StatefulWidget {
-  @override
-  _AddTaskPageState createState() => _AddTaskPageState();
-}
-
-class _AddTaskPageState extends State<AddTaskPage> {
+class AddTaskScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    String newTaskTitle;
+
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 24.0),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          Center(
-            child: Text(
-              'Add new task',
-              style: Theme.of(context).textTheme.title,
-            ),
+          Text(
+            'Add new task',
+            textAlign: TextAlign.center,
+            // ignore: deprecated_member_use
+            style: Theme.of(context).textTheme.title,
           ),
           SizedBox(
             height: 24.0,
           ),
           CustomTextField(
             labelText: 'Add new',
-            autofocus: true,
             textCapitalization: TextCapitalization.sentences,
+            cursorColor: Theme.of(context).primaryColor,
+            autofocus: true,
+            onChanged: (newText) {
+              newTaskTitle = newText;
+            },
           ),
           SizedBox(
             height: 16.0,
@@ -43,13 +45,17 @@ class _AddTaskPageState extends State<AddTaskPage> {
                 text: 'Cancel',
               ),
               CustomButton(
-                onPressed: () {},
+                onPressed: () {
+                  Provider.of<TaskData>(context, listen: false)
+                      .addTask(newTaskTitle);
+                  Navigator.pop(context);
+                },
                 text: 'Add',
                 color: Theme.of(context).accentColor,
                 textColor: Colors.white,
               ),
             ],
-          )
+          ),
         ],
       ),
     );
