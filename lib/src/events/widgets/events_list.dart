@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import '../../task_and_event_data.dart';
+import 'package:todo_app/src/events/models/event_data.dart';
 import '../widgets/events_tile.dart';
 import 'package:provider/provider.dart';
-
 
 class EventList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Consumer<TaskAndEventData>(
+    return Consumer<EventData>(
       builder: (context, eventData, child) {
         return ListView.builder(
           padding: EdgeInsets.symmetric(horizontal: 24.0, vertical: 8.0),
@@ -21,10 +20,10 @@ class EventList extends StatelessWidget {
               isComplete: event.isComplete,
               isFirst: index == 0 ?? true,
               isLast: index == eventData.eventCount - 1 ?? true,
-              horizontalDragCallback: (onHorizontalDrag){
+              horizontalDragCallback: (onHorizontalDrag) {
                 eventData.deleteEvent(event);
               },
-              onTapCallback: (){
+              onTapCallback: () {
                 eventData.updateEvent(event);
               },
             );
@@ -32,6 +31,5 @@ class EventList extends StatelessWidget {
         );
       },
     );
-
   }
 }

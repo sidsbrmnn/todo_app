@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import '../../task_and_event_data.dart';
+import 'package:todo_app/src/events/models/event_data.dart';
 import '../../widgets/custom_button.dart';
 import 'package:provider/provider.dart';
 import '../../widgets/custom_textfield.dart';
 import 'package:intl/intl.dart';
-
 
 class AddEventScreen extends StatefulWidget {
   @override
@@ -88,7 +87,7 @@ class _AddEventScreenState extends State<AddEventScreen> {
             children: <Widget>[
               Expanded(
                 child:
-                _dateTimePicker(Icons.date_range, _pickDate, _selectedDate),
+                    _dateTimePicker(Icons.date_range, _pickDate, _selectedDate),
               ),
               SizedBox(
                 width: 8,
@@ -113,8 +112,9 @@ class _AddEventScreenState extends State<AddEventScreen> {
               ),
               CustomButton(
                 onPressed: () {
-                  Provider.of<TaskAndEventData>(context, listen: false).addEvent(newEventTitle, _selectedTime, category);
-                  TaskAndEventData.sortEvents();
+                  Provider.of<EventData>(context, listen: false)
+                      .addEvent(newEventTitle, _selectedTime, category);
+                  EventData.sortEvents();
                   Navigator.pop(context);
                 },
                 text: 'Add',
@@ -150,4 +150,3 @@ class _AddEventScreenState extends State<AddEventScreen> {
     );
   }
 }
-
